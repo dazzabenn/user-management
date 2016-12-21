@@ -1,1 +1,1 @@
-# Skeleton project for Swagger
+# User Management API
