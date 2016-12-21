@@ -1,7 +1,8 @@
 swagger: "2.0"
 info:
   version: "0.0.1"
-  title: User Management Api
+  title: User Management API
+  description: This is a sample user management API.
 # during dev, should point to your local machine
 host: 127.0.0.1:10010
 # basePath prefixes all resource paths 
@@ -67,8 +68,6 @@ paths:
             $ref: "#/definitions/GetUserResponse"
         "204":
           description: User not found
-          schema:
-            $ref: "#/definitions/ErrorResponse"
         "500":
           description: Error
           schema:
@@ -95,8 +94,6 @@ paths:
             $ref: "#/definitions/GetUserResponse"
         "204":
           description: User not found
-          schema:
-            $ref: "#/definitions/ErrorResponse"
         "500":
           description: Error
           schema:
@@ -117,8 +114,6 @@ paths:
             $ref: "#/definitions/GeneralResponse"
         "204":
           description: User not found
-          schema:
-            $ref: "#/definitions/ErrorResponse"
         "500":
           description: Error
           schema:
@@ -164,12 +159,18 @@ definitions:
         description: The user's surname
       created:
         type: string
-        format: datetime
+        format: date-time
         description: The date and time the user was added
       updated:
         type: string
-        format: datetime
+        format: date-time
         description: The date and time the user was updated
+    example:
+      id: "5a61d9c369ff1adf201446f6032498618a86ab16"
+      email: test@test.com
+      forename: Test
+      surname: User
+      created: "2016-12-21T19:48:15.879Z"
   User:
     type: object
     properties:
@@ -192,12 +193,18 @@ definitions:
       - email
       - forename
       - surname
+    example:
+      email: test@test.com
+      forename: Test
+      surname: User
   ErrorResponse:
     required:
       - message
     properties:
       message:
         type: string
+    example:
+      message: "Sorry, an error has occurred!"
   GeneralResponse:
     type: object
     properties:
@@ -210,3 +217,6 @@ definitions:
     required:
       - success
       - description
+    example:
+      success: 1
+      description: "Your action was successful"
