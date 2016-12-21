@@ -9,6 +9,7 @@ basePath: /
 # 
 schemes:
   - http
+  - https
 # format of bodies a client can send (Content-Type)
 consumes:
   - application/json
