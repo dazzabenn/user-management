@@ -1,0 +1,22 @@
+
+[0m[0m
+[0m  controllers[0m
+[0m    user[0m
+[0m      POST /user[0m
+      [32m  √[0m[90m should correctly create a new user[0m[31m (120ms)[0m
+      [32m  √[0m[90m should return a 400 if no email is provided[0m
+      [32m  √[0m[90m should return a 400 if no forename is provided[0m
+      [32m  √[0m[90m should return a 400 if no surname is provided[0m
+[0m      GET /user[0m
+      [32m  √[0m[90m should return a 204 for an invalid id[0m
+      [32m  √[0m[90m should correctly return a user for a valid id[0m
+[0m      DELETE /user[0m
+      [32m  √[0m[90m should correctly delete a user[0m
+      [32m  √[0m[90m should return a 204 for an invalid id[0m
+[0m      PUT /user[0m
+      [32m  √[0m[90m should return a 204 for an invalid id[0m
+      [32m  √[0m[90m should correctly update a user[0m
+
+
+[92m [0m[32m 10 passing[0m[90m (656ms)[0m
+

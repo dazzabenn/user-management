@@ -1,4 +1,6 @@
-'use strict;'
+/* jshint node: true */
+/* jshint esversion: 6 */
+'use strict';
 
 var crypto = require('crypto');
 
@@ -49,5 +51,5 @@ module.exports = function() {
                 return this.userList[userIndex];
             }
         }       
-    }
-};  
+    };
+};

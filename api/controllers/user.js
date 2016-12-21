@@ -1,3 +1,6 @@
+/* jshint strict:false */
+/* jshint node: true */
+/* jshint esversion: 6 */
 'use strict';
     
 var db = require('../../config/db')();
