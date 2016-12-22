@@ -68,9 +68,9 @@ Gets a user from the database that matches the specified `id` value.
 curl -X GET --header 'Accept: application/json' 'https://glacial-spire-19827.herokuapp.com/user/76b25ec78cb30d91e24c6537c93d2b9e7fb5b58c'
 ```
 
-### Resppnse
+### Response
 
-```javascipt
+```javascript
 {
   "email": "test@test.com",
   "forename": "Test",
