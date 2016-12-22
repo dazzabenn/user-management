@@ -4,7 +4,7 @@ info:
   title: User Management API
   description: This is a sample user management API.
 # during dev, should point to your local machine
-host: 127.0.0.1:10010
+# host: 127.0.0.1:10010
 # basePath prefixes all resource paths 
 basePath: /
 # 
