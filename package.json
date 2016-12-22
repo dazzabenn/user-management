@@ -2,7 +2,7 @@
   "name": "user-management",
   "version": "0.0.1",
   "private": true,
-  "description": "New Swagger API Project",
+  "description": "User Management",
   "keywords": [],
   "author": "",
   "license": "",
@@ -22,11 +22,12 @@
     "istanbul": "^0.4.5",
     "jshint-stylish": "^2.2.1",
     "mocha": "^3.2.0",
+    "mocha-lcov-reporter": "^1.2.0",
     "should": "^7.1.0",
     "supertest": "^1.0.0"
   },
   "scripts": {
     "start": "node app.js",
-    "test": "swagger project test"
+    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/**/*.js"
   }
 }
