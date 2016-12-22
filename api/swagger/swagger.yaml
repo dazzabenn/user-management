@@ -20,7 +20,7 @@ paths:
       tags:
         - user
       operationId: getAll
-      description: Returns a list of users to the caller
+      description: Returns all users that are currently in the database.
       responses:
         "200":
           description: Success
@@ -34,7 +34,7 @@ paths:
       tags:
         - user
       operationId: save
-      description: Adds a new user to the list
+      description: Adds a user to the list of users. The email value must be unique.
       parameters:
         - name: user
           description: User properties
@@ -61,7 +61,7 @@ paths:
       tags:
         - user
       operationId: get
-      description: Get a user
+      description: Gets a user from the database that matches the specified id value.
       parameters:
         - name: id
           type: string
@@ -82,7 +82,7 @@ paths:
       tags:
         - user
       operationId: update
-      description: Update a user
+      description: Updates the user with the specified id. Again, the email value must still be unique.
       parameters:
         - name: id
           description: The id of the user to update
@@ -114,7 +114,7 @@ paths:
       tags:
         - user
       operationId: deleteUser
-      description: Delete a user
+      description: Deletes a user from the database.
       parameters:
         - name: id
           description: The id of the user to delete
@@ -164,12 +164,12 @@ definitions:
       forename:
         type: string
         minLength: 1
-        maxLength: 255
+        maxLength: 100
         description: The user's forename
       surname:
         type: string
         minLength: 1
-        maxLength: 255
+        maxLength: 100
         description: The user's surname
       created:
         type: string
@@ -196,12 +196,12 @@ definitions:
       forename:
         type: string
         minLength: 1
-        maxLength: 255
+        maxLength: 100
         description: The user's forename
       surname:
         type: string
         minLength: 1
-        maxLength: 255
+        maxLength: 100
         description: The user's surname
     required:
       - email
