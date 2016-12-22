@@ -6,6 +6,10 @@ An API for managing a list of users. This API provides methods to add, update, d
 
 Documentation can be found [here](https://glacial-spire-19827.herokuapp.com/docs/)
 
+Some enhancements that can be made:
+*Add "services" to move the business logic out of the controllers, leaving them to just orchestrate. 
+*Add authentication using JSON Web Token s
+
 ## Adding a user
 
 Adds a user to the list of users. The `email` value must be unique.
