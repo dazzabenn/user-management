@@ -8,7 +8,8 @@ Documentation can be found [here](https://glacial-spire-19827.herokuapp.com/docs
 
 Some enhancements that can be made:
 * Add "services" to move the business logic out of the controllers, leaving them to just orchestrate. 
-* Add authentication using JSON Web Token s
+* Add authentication using JSON Web Tokens
+* Use an actual database to store the data, e.g. MongoDB
 
 ## Adding a user
 
