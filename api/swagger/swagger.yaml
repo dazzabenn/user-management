@@ -6,11 +6,7 @@ info:
 # during dev, should point to your local machine
 # host: 127.0.0.1:10010
 # basePath prefixes all resource paths 
-basePath: /
-# 
-schemes:
-# - http
-  - https
+basePath: /api
 # format of bodies a client can send (Content-Type)
 consumes:
   - application/json
@@ -21,6 +17,8 @@ paths:
   /user:
     x-swagger-router-controller: user
     get:
+      tags:
+        - user
       operationId: getAll
       description: Returns a list of users to the caller
       responses:
@@ -33,6 +31,8 @@ paths:
           schema:
             $ref: "#/definitions/ErrorResponse"
     post:
+      tags:
+        - user
       operationId: save
       description: Adds a new user to the list
       parameters:
@@ -58,6 +58,8 @@ paths:
   /user/{id}:
     x-swagger-router-controller: user
     get:
+      tags:
+        - user
       operationId: get
       description: Get a user
       parameters:
@@ -77,6 +79,8 @@ paths:
           schema:
             $ref: "#/definitions/ErrorResponse"
     put:
+      tags:
+        - user
       operationId: update
       description: Update a user
       parameters:
@@ -107,6 +111,8 @@ paths:
           schema:
             $ref: "#/definitions/ErrorResponse"
     delete:
+      tags:
+        - user
       operationId: deleteUser
       description: Delete a user
       parameters:

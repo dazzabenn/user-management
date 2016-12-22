@@ -6,7 +6,7 @@ describe('controllers', function() {
 
   describe('user', function() {
 
-    describe('POST /user', function() {
+    describe('POST /api/user', function() {
 
       it('should correctly create a new user', function(done) {
         var body = {
@@ -15,7 +15,7 @@ describe('controllers', function() {
             email: 'test@test.com'
         };
         request(server)
-          .post('/user')
+          .post('/api/user')
           .send(body)
           .expect('Content-Type', /json/)
           .expect(201) //Status code
@@ -41,7 +41,7 @@ describe('controllers', function() {
             email: 'test@test.com'
         };
         request(server)
-          .post('/user')
+          .post('/api/user')
           .send(body)
           .end(function(err,res) {
               if (err) {
@@ -49,7 +49,7 @@ describe('controllers', function() {
               }
               
               request(server)
-                .post('/user')
+                .post('/api/user')
                 .send(body)
                 .expect(409) //Status code
                 .end(function(err,res) {
@@ -70,7 +70,7 @@ describe('controllers', function() {
             surname: 'User',
         };
         request(server)
-          .post('/user')
+          .post('/api/user')
           .send(body)
           .expect('Content-Type', /json/)
           .expect(400) //Status code
@@ -89,7 +89,7 @@ describe('controllers', function() {
             email: 'test@test.com'
         };
         request(server)
-          .post('/user')
+          .post('/api/user')
           .send(body)
           .expect('Content-Type', /json/)
           .expect(400) //Status code
@@ -108,7 +108,7 @@ describe('controllers', function() {
             email: 'test@test.com'
         };
         request(server)
-          .post('/user')
+          .post('/api/user')
           .send(body)
           .expect('Content-Type', /json/)
           .expect(400) //Status code
@@ -123,11 +123,11 @@ describe('controllers', function() {
 
     });
 
-    describe('GET /user', function() {
+    describe('GET /api/user', function() {
 
       it('should return a 204 for an invalid id', function(done) {
         request(server)
-          .get('/user/123456789')
+          .get('/api/user/123456789')
           .expect(204) //Status code
           .end(function(err,res) {
               if (err) {
@@ -147,13 +147,13 @@ describe('controllers', function() {
         var id;
 
         request(server)
-          .post('/user')
+          .post('/api/user')
           .send(body)
           .end(function(err, res) {
               id = res.body.id;
 
                request(server)
-                .get('/user/' + id)
+                .get('/api/user/' + id)
                 .expect(200) //Status code
                 .end(function(err,res) {
                     if (err) {
@@ -169,7 +169,7 @@ describe('controllers', function() {
 
     });
 
-    describe('DELETE /user', function() {
+    describe('DELETE /api/user', function() {
 
       it('should correctly delete a user', function(done) {
 
@@ -181,13 +181,13 @@ describe('controllers', function() {
         var id;
 
         request(server)
-          .post('/user')
+          .post('/api/user')
           .send(body)
           .end(function(err, res) {
               id = res.body.id;
 
                request(server)
-                .delete('/user/' + id)
+                .delete('/api/user/' + id)
                 .expect(200) //Status code
                 .end(function(err,res) {
                     if (err) {
@@ -204,7 +204,7 @@ describe('controllers', function() {
 
       it('should return a 204 for an invalid id', function(done) {
         request(server)
-          .delete('/user/123456789')
+          .delete('/api/user/123456789')
           .expect(204) //Status code
           .end(function(err,res) {
               if (err) {
@@ -217,7 +217,7 @@ describe('controllers', function() {
 
     });
 
-    describe('PUT /user', function() {
+    describe('PUT /api/user', function() {
 
         var body = {
             forename: 'Test',
@@ -227,7 +227,7 @@ describe('controllers', function() {
 
       it('should return a 204 for an invalid id', function(done) {
         request(server)
-          .put('/user/123456789')
+          .put('/api/user/123456789')
           .send(body)
           .expect(204) //Status code
           .end(function(err,res) {
@@ -249,7 +249,7 @@ describe('controllers', function() {
         var id;
 
         request(server)
-          .post('/user')
+          .post('/api/user')
           .send(body)
           .end(function(err, res) {
             id = res.body.id;
@@ -261,7 +261,7 @@ describe('controllers', function() {
             };
 
             request(server)
-              .put('/user/' + id)
+              .put('/api/user/' + id)
               .send(updatedBody)
               .expect(200) //Status code
               .end(function(err,res) {
@@ -286,7 +286,7 @@ describe('controllers', function() {
             email: 'test5@test.com'
         };
         request(server)
-          .post('/user')
+          .post('/api/user')
           .send(body)
           .end(function(err,res) {
               if (err) {
@@ -294,7 +294,7 @@ describe('controllers', function() {
               }
               
               request(server)
-                .post('/user')
+                .post('/api/user')
                 .send(body)
                 .expect(409) //Status code
                 .end(function(err,res) {
