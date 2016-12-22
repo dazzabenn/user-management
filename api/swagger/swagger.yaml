@@ -9,7 +9,7 @@ info:
 basePath: /
 # 
 schemes:
-  - http
+  # - http
   - https
 # format of bodies a client can send (Content-Type)
 consumes:
