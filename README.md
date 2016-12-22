@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/dazzabenn/user-management.svg?branch=master)](https://travis-ci.org/dazzabenn/user-management)
 [![Coverage Status](https://coveralls.io/repos/github/dazzabenn/user-management/badge.svg?branch=master)](https://coveralls.io/github/dazzabenn/user-management?branch=master)
+[![Dependency Status](https://gemnasium.com/badges/github.com/dazzabenn/user-management.svg)](https://gemnasium.com/github.com/dazzabenn/user-management)
 
 An API for managing a list of users. This API provides methods to add, update, delete and list users. The list of users is currently only stored in memory and so will only last for as long as the web server is running the application.
 
