@@ -34,6 +34,36 @@ describe('controllers', function() {
           });
       });
 
+      it('should return 409 if user is submitted with an email that already exists', function(done) {
+        var body = {
+            forename: 'Test',
+            surname: 'User',
+            email: 'test@test.com'
+        };
+        request(server)
+          .post('/user')
+          .send(body)
+          .end(function(err,res) {
+              if (err) {
+                  throw err;
+              }
+              
+              request(server)
+                .post('/user')
+                .send(body)
+                .expect(409) //Status code
+                .end(function(err,res) {
+                    if (err) {
+                        throw err;
+                    }
+
+                    res.body.message.should.equal('A user with the e-mail test@test.com alreedy exists.');
+                    
+                    done();
+                });
+          });
+      });
+
       it('should return a 400 if no email is provided', function(done) {
          var body = {
             forename: 'Test',
@@ -112,7 +142,7 @@ describe('controllers', function() {
         var body = {
           forename: 'Test',
           surname: 'User',
-          email: 'test@test.com'
+          email: 'test2@test.com'
         };
         var id;
 
@@ -146,7 +176,7 @@ describe('controllers', function() {
         var body = {
           forename: 'Test',
           surname: 'User',
-          email: 'test@test.com'
+          email: 'test3@test.com'
         };
         var id;
 
@@ -214,7 +244,7 @@ describe('controllers', function() {
         var body = {
           forename: 'Test',
           surname: 'User',
-          email: 'test@test.com'
+          email: 'test4@test.com'
         };
         var id;
 
@@ -246,6 +276,36 @@ describe('controllers', function() {
                   res.body.updated.should.not.equal(null);
                   done();
               });
+          });
+      });
+
+      it('should return 409 if user is submitted with an email that already exists', function(done) {
+        var body = {
+            forename: 'Test',
+            surname: 'User',
+            email: 'test5@test.com'
+        };
+        request(server)
+          .post('/user')
+          .send(body)
+          .end(function(err,res) {
+              if (err) {
+                  throw err;
+              }
+              
+              request(server)
+                .post('/user')
+                .send(body)
+                .expect(409) //Status code
+                .end(function(err,res) {
+                    if (err) {
+                        throw err;
+                    }
+
+                    res.body.message.should.equal('A user with the e-mail test5@test.com alreedy exists.');
+                    
+                    done();
+                });
           });
       });
 
