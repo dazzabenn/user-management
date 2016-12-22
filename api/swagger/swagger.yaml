@@ -9,7 +9,7 @@ info:
 basePath: /
 # 
 schemes:
-  # - http
+# - http
   - https
 # format of bodies a client can send (Content-Type)
 consumes:
@@ -47,6 +47,10 @@ paths:
           description: Created
           schema:
             $ref: "#/definitions/GetUserResponse"
+        "409":
+          description: Conflict
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         "500":
           description: Error
           schema:
@@ -94,6 +98,10 @@ paths:
             $ref: "#/definitions/GetUserResponse"
         "204":
           description: User not found
+        "409":
+          description: Conflict
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         "500":
           description: Error
           schema:

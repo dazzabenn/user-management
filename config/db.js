@@ -19,22 +19,28 @@ module.exports = function() {
         find(id) {
             if(id) {
                 return this.userList.find(element => {
-                        return element.id === id;
-                    }); 
+                    return element.id === id;
+                }); 
             } else {
                 return this.userList;
             }
         },
 
+        findByEmail(email) {
+             return this.userList.find(element => {
+                    return element.email === email;
+                }); 
+        },
+
         remove(id) {
             var found = 0;
             this.userList = this.userList.filter(element => {
-                    if(element.id === id) {
-                        found = 1;
-                    } else {
-                        return element.id !== id;
-                    }
-                });
+                if(element.id === id) {
+                    found = 1;
+                } else {
+                    return element.id !== id;
+                }
+            });
             return found;           
         },
 

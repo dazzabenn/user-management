@@ -14,7 +14,7 @@ SwaggerExpress.create(config, function(err, swaggerExpress) {
 
 	// Serve the Swagger documents and Swagger UI
 	app.use(swaggerExpress.runner.swaggerTools.swaggerUi());
-
+ 
 	// install middleware
 	swaggerExpress.register(app);
 
