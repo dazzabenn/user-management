@@ -7,4 +7,6 @@ before_script:
   - npm install -g swagger
 
 # Send coverage data to Coveralls
-after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+after_script: 
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - bithound check git@github.com:dazzabenn/user-management.git

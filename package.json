@@ -13,6 +13,7 @@
     "swagger-express-mw": "^0.1.0"
   },
   "devDependencies": {
+    "bithound": "^1.7.0",
     "coveralls": "^2.11.15",
     "grunt": "^1.0.1",
     "grunt-contrib-jshint": "^1.1.0",
